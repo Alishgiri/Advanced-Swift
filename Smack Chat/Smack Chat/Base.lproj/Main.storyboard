@@ -210,7 +210,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDr-5Z-CiA">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CDr-5Z-CiA" customClass="RoundedButton" customModule="Smack_Chat" customModuleProvider="target">
                                 <rect key="frame" x="35" y="273" width="250" height="40"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -347,7 +347,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVh-lK-xEu">
                                         <rect key="frame" x="0.0" y="71" width="250" height="2"/>
@@ -392,8 +392,8 @@
                                     <constraint firstAttribute="height" constant="100" id="isE-pY-giT"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mA-p3-N89">
-                                <rect key="frame" x="35" y="508" width="250" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6mA-p3-N89" customClass="RoundedButton" customModule="Smack_Chat" customModuleProvider="target">
+                                <rect key="frame" x="35" y="488" width="250" height="40"/>
                                 <color key="backgroundColor" red="0.35686274509999999" green="0.62352941179999999" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="hKe-bg-9Kv"/>
@@ -402,9 +402,12 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="uNa-cS-qnB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                <state key="normal" title="LOGIN">
+                                <state key="normal" title="Create Account">
                                     <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnCreateAccount:" destination="MsG-M7-nuH" eventType="touchUpInside" id="aKF-7Y-UTp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lak-mH-q0B">
                                 <rect key="frame" x="109.5" y="253" width="100" height="130"/>
@@ -415,6 +418,9 @@
                                 <state key="normal" title="Choose avatar">
                                     <color key="titleColor" red="0.40392156862745099" green="0.57647058823529407" blue="0.7686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="btnChooseAvatar:" destination="MsG-M7-nuH" eventType="touchUpInside" id="Td6-za-Hh4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8x6-cC-8wP">
                                 <rect key="frame" x="35" y="393" width="250" height="20"/>
@@ -428,13 +434,14 @@
                                 </state>
                                 <connections>
                                     <action selector="btnCreateAccount:" destination="z8V-zF-deR" eventType="touchUpInside" id="MxJ-lW-J4H"/>
+                                    <action selector="btnGenerateBG:" destination="MsG-M7-nuH" eventType="touchUpInside" id="CGI-NO-A6U"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="fRe-s8-IZq" firstAttribute="top" secondItem="4ew-lD-UZf" secondAttribute="top" constant="40" id="3aH-nM-eUf"/>
-                            <constraint firstItem="4ew-lD-UZf" firstAttribute="bottom" secondItem="6mA-p3-N89" secondAttribute="bottom" constant="20" id="BRV-yC-HXX"/>
+                            <constraint firstItem="4ew-lD-UZf" firstAttribute="bottom" secondItem="6mA-p3-N89" secondAttribute="bottom" constant="40" id="BRV-yC-HXX"/>
                             <constraint firstItem="8x6-cC-8wP" firstAttribute="centerX" secondItem="hPs-yP-ihu" secondAttribute="centerX" id="FEK-be-Ccr"/>
                             <constraint firstItem="xMM-qw-g6q" firstAttribute="top" secondItem="4ew-lD-UZf" secondAttribute="top" constant="10" id="KkF-Pz-QuU"/>
                             <constraint firstItem="ZuC-El-4Qf" firstAttribute="top" secondItem="VQR-6o-n6f" secondAttribute="bottom" constant="20" id="MZK-cP-lQz"/>
@@ -452,6 +459,10 @@
                         <viewLayoutGuide key="safeArea" id="4ew-lD-UZf"/>
                     </view>
                     <connections>
+                        <outlet property="fldEmail" destination="Z9P-te-8BQ" id="2Xb-YP-Vmi"/>
+                        <outlet property="fldPassword" destination="a0T-zD-B8l" id="0yn-4C-h5r"/>
+                        <outlet property="fldUsername" destination="21V-nl-3Qj" id="vBK-Km-6lk"/>
+                        <outlet property="imgUser" destination="ZuC-El-4Qf" id="uI6-9J-nVp"/>
                         <segue destination="J0m-xb-ThP" kind="unwind" identifier="unwindToChannel" unwindAction="prepareForUnwindWithSegue:" id="SQd-FA-qH6"/>
                     </connections>
                 </viewController>
