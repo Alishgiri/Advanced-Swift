@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		043DC9E720A401E800EA6247 /* UserDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DC9E620A401E800EA6247 /* UserDataService.swift */; };
+		043DC9E920A40BE300EA6247 /* AvatarPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DC9E820A40BE300EA6247 /* AvatarPickerVC.swift */; };
+		043DC9EB20A40DEB00EA6247 /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DC9EA20A40DEB00EA6247 /* AvatarCell.swift */; };
+		043DC9ED20A41CDD00EA6247 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043DC9EC20A41CDD00EA6247 /* CircleImage.swift */; };
 		04756BCC20A2B867001F37AE /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04756BCB20A2B867001F37AE /* AuthService.swift */; };
 		04756BCE20A2EBE9001F37AE /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04756BCD20A2EBE9001F37AE /* RoundedButton.swift */; };
 		30E8ECB2209F1A67009815E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30E8ECB1209F1A67009815E4 /* AppDelegate.swift */; };
@@ -24,6 +28,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		043DC9E620A401E800EA6247 /* UserDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataService.swift; sourceTree = "<group>"; };
+		043DC9E820A40BE300EA6247 /* AvatarPickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarPickerVC.swift; sourceTree = "<group>"; };
+		043DC9EA20A40DEB00EA6247 /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
+		043DC9EC20A41CDD00EA6247 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		04756BCB20A2B867001F37AE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		04756BCD20A2EBE9001F37AE /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		30E8ECAE209F1A67009815E4 /* Smack Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smack Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				04756BCB20A2B867001F37AE /* AuthService.swift */,
+				043DC9E620A401E800EA6247 /* UserDataService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -109,6 +118,7 @@
 				30E8ECC6209F1B66009815E4 /* ChannelVC.swift */,
 				30E8ECD4209F3BC6009815E4 /* LoginVC.swift */,
 				30E8ECD620A090CA009815E4 /* CreateAccountVC.swift */,
+				043DC9E820A40BE300EA6247 /* AvatarPickerVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -118,6 +128,8 @@
 			children = (
 				30E8ECCF209F229E009815E4 /* GradientView.swift */,
 				04756BCD20A2EBE9001F37AE /* RoundedButton.swift */,
+				043DC9EA20A40DEB00EA6247 /* AvatarCell.swift */,
+				043DC9EC20A41CDD00EA6247 /* CircleImage.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -284,12 +296,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				30E8ECC5209F1B59009815E4 /* ChatVC.swift in Sources */,
+				043DC9E920A40BE300EA6247 /* AvatarPickerVC.swift in Sources */,
 				04756BCE20A2EBE9001F37AE /* RoundedButton.swift in Sources */,
+				043DC9ED20A41CDD00EA6247 /* CircleImage.swift in Sources */,
 				30E8ECD3209F2EFC009815E4 /* Constants.swift in Sources */,
+				043DC9E720A401E800EA6247 /* UserDataService.swift in Sources */,
 				30E8ECD720A090CB009815E4 /* CreateAccountVC.swift in Sources */,
 				04756BCC20A2B867001F37AE /* AuthService.swift in Sources */,
 				30E8ECD5209F3BC6009815E4 /* LoginVC.swift in Sources */,
 				30E8ECC7209F1B66009815E4 /* ChannelVC.swift in Sources */,
+				043DC9EB20A40DEB00EA6247 /* AvatarCell.swift in Sources */,
 				30E8ECD0209F229E009815E4 /* GradientView.swift in Sources */,
 				30E8ECB2209F1A67009815E4 /* AppDelegate.swift in Sources */,
 				30E8ECCE209F1BA0009815E4 /* SWRevealViewController.m in Sources */,
