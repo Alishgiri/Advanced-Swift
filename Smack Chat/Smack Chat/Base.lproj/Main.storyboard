@@ -48,8 +48,8 @@
                                         <state key="normal" image="smackBurger"/>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SMACK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZFT-ed-k3r">
-                                        <rect key="frame" x="105.5" y="31" width="110.5" height="46"/>
-                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="36"/>
+                                        <rect key="frame" x="127.5" y="43" width="65.5" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="18"/>
                                         <color key="textColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -74,6 +74,7 @@
                     </view>
                     <connections>
                         <outlet property="btnMenu" destination="g3X-rq-pUC" id="edG-bf-i2q"/>
+                        <outlet property="lblChannelName" destination="ZFT-ed-k3r" id="lxW-ko-edX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TeS-JJ-rHD" userLabel="First Responder" sceneMemberID="firstResponder"/>
