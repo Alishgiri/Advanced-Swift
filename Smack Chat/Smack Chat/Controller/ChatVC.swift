@@ -8,13 +8,27 @@
 
 import UIKit
 
-class ChatVC: UIViewController {
+class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var btnMenu: UIButton!
     @IBOutlet weak var lblChannelName: UILabel!
+    @IBOutlet weak var fldMessageBox: UITextField!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.bindToKeyboard()
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        // Hide Keyboard
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ChatVC.handleTap))
+        view.addGestureRecognizer(tap)
+        
+        // DYNAMIC SIZE OF A TABLE :- set number of lines in the attribute inspector to 0 which means unlimited number of lines.
+        tableView.estimatedRowHeight = 80
+        tableView.rowHeight = UITableViewAutomaticDimension
+        
         btnMenu.addTarget(self.revealViewController(), action: #selector(SWRevealViewController.revealToggle(_:)), for: .touchUpInside)
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer()) // SWIPE GESTURE
         self.view.addGestureRecognizer(self.revealViewController().tapGestureRecognizer())
@@ -31,6 +45,11 @@ class ChatVC: UIViewController {
         MessageService.instance.findAllChannel { (success) in
             
         }
+    }
+    
+    // Hide Keyboard
+    @objc func handleTap() {
+        view.endEditing(true)
     }
     
     @objc func userDataDidChanged(_ notif: Notification) {
@@ -52,6 +71,20 @@ class ChatVC: UIViewController {
         getMessages()
     }
     
+    @IBAction func btnSendMessage(_ sender: Any) {
+        if AuthService.instance.isLoggedIn {
+            guard let channelId = MessageService.instance.selectedChannel?.id else { return }
+            guard let message = fldMessageBox.text else { return }
+            
+            SocketService.instance.addMessage(messageBody: message, userId: UserDataService.instance.id, channelId: channelId) { (success) in
+                if success {
+                    self.fldMessageBox.text = ""
+                    self.fldMessageBox.resignFirstResponder()
+                }
+            }
+        }
+    }
+    
     func onLoginGetMessages() {
         MessageService.instance.findAllChannel { (success) in
             if success {
@@ -68,8 +101,31 @@ class ChatVC: UIViewController {
     func getMessages() {
         guard let channelId = MessageService.instance.selectedChannel?.id else { return }
         MessageService.instance.findAllMessageForChannel(channelId: channelId) { (success) in
-            
+            if success {
+                self.tableView.reloadData()
+            }
         }
     }
+    
+}
 
+extension ChatVC {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "messageCell", for: indexPath) as? MessageCell {
+            let message = MessageService.instance.messages[indexPath.row]
+            cell.configureCell(message: message)
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return MessageService.instance.messages.count
+    }
+    
 }
