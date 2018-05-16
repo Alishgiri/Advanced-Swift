@@ -67,8 +67,11 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="fldMessageBoxAction:" destination="Fje-gD-aMX" eventType="editingDidEnd" id="2Ah-SB-RZV"/>
+                                </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAJ-Xf-2fj">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vAJ-Xf-2fj" userLabel="send Btn">
                                 <rect key="frame" x="287" y="540.5" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="WGh-jK-AiO"/>
@@ -138,16 +141,26 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y0g-7p-kOO">
+                                <rect key="frame" x="8" y="516" width="304" height="18"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KnQ-1h-IOJ" firstAttribute="top" secondItem="j3x-yH-5OH" secondAttribute="bottom" constant="30" id="2aK-MJ-OHx"/>
+                            <constraint firstItem="Y0g-7p-kOO" firstAttribute="top" secondItem="j3x-yH-5OH" secondAttribute="bottom" constant="8" id="5Yn-Nh-PjG"/>
+                            <constraint firstItem="Y0g-7p-kOO" firstAttribute="leading" secondItem="EOu-2c-pe2" secondAttribute="leading" constant="8" id="9kb-fI-Hi4"/>
                             <constraint firstItem="vAJ-Xf-2fj" firstAttribute="centerY" secondItem="KnQ-1h-IOJ" secondAttribute="centerY" id="B0q-mb-fzj"/>
                             <constraint firstItem="j3x-yH-5OH" firstAttribute="leading" secondItem="EOu-2c-pe2" secondAttribute="leading" id="E7f-aX-JrC"/>
                             <constraint firstItem="Ju1-Wb-AW4" firstAttribute="top" secondItem="aOB-lj-lhJ" secondAttribute="top" id="HAd-hF-hlg"/>
                             <constraint firstItem="EOu-2c-pe2" firstAttribute="trailing" secondItem="j3x-yH-5OH" secondAttribute="trailing" id="JWT-oH-koh"/>
                             <constraint firstItem="EOu-2c-pe2" firstAttribute="trailing" secondItem="vAJ-Xf-2fj" secondAttribute="trailing" constant="8" id="Pgs-x9-NSu"/>
                             <constraint firstItem="KnQ-1h-IOJ" firstAttribute="bottom" secondItem="EOu-2c-pe2" secondAttribute="bottom" id="RdD-Gf-1cN"/>
+                            <constraint firstItem="KnQ-1h-IOJ" firstAttribute="top" secondItem="Y0g-7p-kOO" secondAttribute="bottom" constant="4" id="c6r-xO-CqP"/>
+                            <constraint firstAttribute="trailing" secondItem="Y0g-7p-kOO" secondAttribute="trailing" constant="8" id="eFk-4S-3Vk"/>
                             <constraint firstItem="Ju1-Wb-AW4" firstAttribute="trailing" secondItem="EOu-2c-pe2" secondAttribute="trailing" id="nou-JQ-EOg"/>
                             <constraint firstItem="EOu-2c-pe2" firstAttribute="trailing" secondItem="KnQ-1h-IOJ" secondAttribute="trailing" constant="35" id="qCJ-dd-h3D"/>
                             <constraint firstItem="Ju1-Wb-AW4" firstAttribute="leading" secondItem="EOu-2c-pe2" secondAttribute="leading" id="qqR-Rs-ir6"/>
@@ -158,8 +171,10 @@
                     </view>
                     <connections>
                         <outlet property="btnMenu" destination="g3X-rq-pUC" id="edG-bf-i2q"/>
+                        <outlet property="btnSend" destination="vAJ-Xf-2fj" id="kEZ-41-Alu"/>
                         <outlet property="fldMessageBox" destination="KnQ-1h-IOJ" id="jIA-Kr-DfX"/>
                         <outlet property="lblChannelName" destination="ZFT-ed-k3r" id="lxW-ko-edX"/>
+                        <outlet property="lblUserTypingShow" destination="Y0g-7p-kOO" id="6PS-zz-RXC"/>
                         <outlet property="tableView" destination="j3x-yH-5OH" id="BIM-Dt-OVl"/>
                     </connections>
                 </viewController>
@@ -262,7 +277,7 @@
                     </view>
                     <connections>
                         <outlet property="btnLoginOutlet" destination="gTF-Lo-Nqf" id="1xI-L9-nSr"/>
-                        <outlet property="imgUserImage" destination="qoi-1G-FxV" id="1eI-rt-ffe"/>
+                        <outlet property="imgUserImage" destination="qoi-1G-FxV" id="7rh-KE-WNl"/>
                         <outlet property="tableView" destination="mg3-qj-sV4" id="sJ2-22-f6Q"/>
                         <segue destination="z8V-zF-deR" kind="show" identifier="toLogin" id="bdj-rt-6kH"/>
                     </connections>

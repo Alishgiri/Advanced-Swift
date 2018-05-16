@@ -33,7 +33,6 @@ class UserDataService {
     func returnUIColor(components: String) -> UIColor {
         let scanner = Scanner(string: components)
         let skipped = CharacterSet(charactersIn: "[], ") // skip these character
-        let brace = CharacterSet(charactersIn: "[")
         let comma = CharacterSet(charactersIn: ",")
         scanner.charactersToBeSkipped = skipped
         
@@ -69,6 +68,7 @@ class UserDataService {
         AuthService.instance.userEmail = ""
         AuthService.instance.authToken = ""
         MessageService.instance.clearChannels()
+        MessageService.instance.clearMessages()
     }
     
 }
