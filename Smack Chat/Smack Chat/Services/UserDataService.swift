@@ -27,7 +27,7 @@ class UserDataService {
         self.name = name
     }
     
-    func setAvatarNmae(avatarName: String) {
+    func setAvatarName(avatarName: String) {
         self.avatarName = avatarName
     }
     
@@ -56,8 +56,20 @@ class UserDataService {
         let aFloat = CGFloat(aUnwrapped.doubleValue)
         
         let newColor = UIColor(red: rFloat, green: gFloat, blue: bFloat, alpha: aFloat)
-        
         return newColor
+    }
+    
+    func logoutUser() {
+        id = ""
+        avatarName = ""
+        avatarColor = ""
+        email = ""
+        name = ""
+        AuthService.instance.isLoggedIn = false
+        AuthService.instance.userEmail = ""
+        AuthService.instance.authToken = ""
+        MessageService.instance.clearChannels()
+        MessageService.instance.clearMessages()
     }
     
 }

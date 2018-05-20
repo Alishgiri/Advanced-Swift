@@ -71,10 +71,10 @@ extension AvatarPickerVC {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if avatarType == .dark {
-            UserDataService.instance.setAvatarNmae(avatarName: "dark\(indexPath.item)")
+            UserDataService.instance.setAvatarName(avatarName: "dark\(indexPath.item)")
         }
         if avatarType == .light {
-            UserDataService.instance.setAvatarNmae(avatarName: "light\(indexPath.item)")
+            UserDataService.instance.setAvatarName(avatarName: "light\(indexPath.item)")
         }
         self.dismiss(animated: true, completion: nil)
     }

@@ -15,7 +15,8 @@ class GradientView: UIView {
     // THIS ALLOWS EDITING TO BE DONE FROM Main.Storyboard
     @IBInspectable var topColor: UIColor = #colorLiteral(red: 0.2901960784, green: 0.3019607843, blue: 0.8470588235, alpha: 1) {
         didSet {
-            // THE SET VALUE WILL BE UPDATED WITH THIS CALL
+            // didSet WILL BE CALLED AFTER THE VALUE OF THIS VARIABLE IS ONCE SET
+            // AFTER A VALUE IS SET TO THIS VARIABLE THEN THIS BLOCK OF CODE INSIDE didSet WILL RUN
             self.setNeedsLayout()
         }
     }
@@ -34,6 +35,11 @@ class GradientView: UIView {
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)
         gradientLayer.frame = self.bounds // size of the UIView
         self.layer.insertSublayer(gradientLayer, at: 0) // 0 here means first layer
+    }
+    
+    override func prepareForInterfaceBuilder() {
+        super.prepareForInterfaceBuilder()
+        layoutIfNeeded()
     }
     
 
