@@ -12,7 +12,8 @@ class UserDataService {
     
     static let instance = UserDataService()
     
-    public private(set) var id =  "" // ONLY THIS CLASS IS ALLOWED TO SET THE VALUE OF ID BY USING  private(set)
+    // private(set): ONLY THIS CLASS IS ALLOWED TO SET THE VALUES
+    public private(set) var id = ""
     public private(set) var avatarColor = ""
     public private(set) var avatarName = ""
     public private(set) var email = ""

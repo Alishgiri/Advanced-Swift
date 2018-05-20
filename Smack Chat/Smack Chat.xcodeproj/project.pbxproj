@@ -34,6 +34,7 @@
 		043DC9EC20A41CDD00EA6247 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		04756BCB20A2B867001F37AE /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		04756BCD20A2EBE9001F37AE /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		30A0D60C20A6918E006FB804 /* ReadME */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadME; sourceTree = "<group>"; };
 		30E8ECAE209F1A67009815E4 /* Smack Chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Smack Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		30E8ECB1209F1A67009815E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		30E8ECB6209F1A67009815E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -107,6 +108,7 @@
 				30E8ECB8209F1A68009815E4 /* Assets.xcassets */,
 				30E8ECBA209F1A68009815E4 /* LaunchScreen.storyboard */,
 				30E8ECBD209F1A68009815E4 /* Info.plist */,
+				30A0D60C20A6918E006FB804 /* ReadME */,
 			);
 			path = "Smack Chat";
 			sourceTree = "<group>";

@@ -12,6 +12,7 @@ import UIKit
 class GradientView: UIView {
     
     // CUSTOM VARIABLE THAT WE CAN CHANGE CAN BE ACHIVED BY USING @IBInspectable
+    // THIS ALLOWS EDITING TO BE DONE FROM Main.Storyboard
     @IBInspectable var topColor: UIColor = #colorLiteral(red: 0.2901960784, green: 0.3019607843, blue: 0.8470588235, alpha: 1) {
         didSet {
             // THE SET VALUE WILL BE UPDATED WITH THIS CALL
@@ -31,7 +32,7 @@ class GradientView: UIView {
         gradientLayer.colors = [topColor.cgColor, bottomColor.cgColor]
         gradientLayer.startPoint = CGPoint(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint(x: 1, y: 1)
-        gradientLayer.frame = self.bounds // size of the uiview
+        gradientLayer.frame = self.bounds // size of the UIView
         self.layer.insertSublayer(gradientLayer, at: 0) // 0 here means first layer
     }
     

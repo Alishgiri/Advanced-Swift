@@ -55,7 +55,6 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.80249443004780741" blue="0.31696163640191521" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="ZFT-ed-k3r" firstAttribute="centerY" secondItem="g3X-rq-pUC" secondAttribute="centerY" id="IBZ-rY-KlW"/>
                                     <constraint firstItem="g3X-rq-pUC" firstAttribute="leading" secondItem="Ju1-Wb-AW4" secondAttribute="leading" constant="12" id="Qfm-pV-aqC"/>
@@ -79,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TeS-JJ-rHD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="904" y="331"/>
+            <point key="canvasLocation" x="923" y="359"/>
         </scene>
         <!--ChannelVC-->
         <scene sceneID="NTr-Te-NFe">
@@ -176,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaO-2L-E3T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903.75" y="-338.02816901408448"/>
+            <point key="canvasLocation" x="923" y="-338"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="Jc5-1U-Xr0">
@@ -299,7 +298,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SyA-mj-fGY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1676.25" y="-338.02816901408448"/>
+            <point key="canvasLocation" x="1719" y="-338"/>
         </scene>
         <!--Create AccountVC-->
         <scene sceneID="3CI-rK-QTD">
@@ -411,9 +410,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lak-mH-q0B">
-                                <rect key="frame" x="109.5" y="253" width="100" height="130"/>
+                                <rect key="frame" x="109.5" y="253" width="100" height="140"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="Glv-Lm-egg"/>
+                                    <constraint firstAttribute="height" constant="140" id="Glv-Lm-egg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="13"/>
                                 <state key="normal" title="Choose avatar">
@@ -424,7 +423,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8x6-cC-8wP">
-                                <rect key="frame" x="35" y="393" width="250" height="20"/>
+                                <rect key="frame" x="35" y="403" width="250" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="JnX-r7-g6s"/>
                                     <constraint firstAttribute="width" constant="250" id="Pmg-On-u6p"/>
@@ -567,7 +566,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQG-EG-iT8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3408.75" y="-336.97183098591552"/>
+            <point key="canvasLocation" x="3326" y="-338"/>
         </scene>
     </scenes>
     <resources>
