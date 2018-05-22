@@ -61,9 +61,9 @@
 				3034744E20B11B98009FABB9 /* Supporting Files */,
 				3034743C20B0588D009FABB9 /* ViewController.swift */,
 				3034744C20B11B8C009FABB9 /* Concentration.swift */,
+				3034744F20B11C81009FABB9 /* Card.swift */,
 				3034743E20B0588D009FABB9 /* Main.storyboard */,
 				3034744620B0588E009FABB9 /* Info.plist */,
-				3034744F20B11C81009FABB9 /* Card.swift */,
 			);
 			path = Concentration;
 			sourceTree = "<group>";
