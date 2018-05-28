@@ -14,22 +14,25 @@ struct Concentration {
     
     private var IndexOfOneAndOnlyFaceUpCard: Int? {
         get {
-            var foundIndex: Int?
-            for index in cards.indices {
-                if cards[index].isFaceUp {
-                    if foundIndex == nil {
-                        foundIndex = index
-                    } else {
-                        return nil
-                    }
-                }
-            }
-            return foundIndex
+            return cards.indices.filter { cards[$0].isFaceUp }.oneAndOnly
+//            var foundIndex: Int?
+//            for index in cards.indices {
+//                if cards[index].isFaceUp {
+//                    if foundIndex == nil {
+//                        foundIndex = index
+//                    } else {
+//                        return nil
+//                    }
+//                }
+//            }
+//          return foundIndex
         }
         
         set {
             for index in cards.indices {
-                cards[index].isFaceUp = (index == newValue)
+                if newValue != nil {
+                    cards[index].isFaceUp = (index == newValue)
+                }
             }
         }
     }
@@ -58,11 +61,16 @@ struct Concentration {
     
     init(numberOfPairsOfCards: Int) {
         assert(numberOfPairsOfCards > 0, "Concentration.init(at: \(numberOfPairsOfCards): you mush have at least one pair of card.")
-        for _ in 0..<numberOfPairsOfCards {
+        for _ in 1...numberOfPairsOfCards {
             let card = Card()
             cards += [card, card]
         }
-        
         // TODO: Shuffle the cards
+    }
+}
+
+extension Collection {
+    var oneAndOnly: Element? {
+        return count == 1 ? first : nil
     }
 }

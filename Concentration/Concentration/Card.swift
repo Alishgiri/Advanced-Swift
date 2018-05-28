@@ -22,13 +22,13 @@ struct Card: Hashable {
     
     private static var identifierFactory = 0
     
+    init() {
+        self.identifier = Card.getUniqueIdentifier()
+    }
+    
     private static func getUniqueIdentifier() -> Int {
         identifierFactory += 1
         return identifierFactory
-    }
-    
-    init() {
-        self.identifier = Card.getUniqueIdentifier()
     }
     
 }
