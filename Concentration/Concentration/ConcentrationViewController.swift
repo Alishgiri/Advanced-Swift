@@ -17,10 +17,19 @@ class ConcentrationViewController: UIViewController {
     }
     @IBOutlet private var btnCardOutletCollection: [UIButton]!
     
+    private var visibleCardButtons: [UIButton]! {
+        return btnCardOutletCollection?.filter { !$0.superview!.isHidden}
+    }
+    
     private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
     
     var numberOfPairsOfCards: Int {
-        return (btnCardOutletCollection.count + 1) / 2
+        return (visibleCardButtons.count + 1) / 2
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        updateViewFromModel()
     }
     
     private(set) var flipCount = 0 {
@@ -35,8 +44,15 @@ class ConcentrationViewController: UIViewController {
             .strokeWidth : 5.0,
             .strokeColor : UIColor.black
         ]
-        let attributedString = NSAttributedString(string: "Flips \(flipCount)", attributes: attributes)
+        let attributedString = NSAttributedString(
+            string: traitCollection.verticalSizeClass == .compact ? "Flips\n\(flipCount)" : "Flips \(flipCount)",
+            attributes: attributes)
         lblFlipCount.attributedText = attributedString
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        updateFlipCountLabel()
     }
     
     override func viewDidLoad() {
@@ -44,7 +60,7 @@ class ConcentrationViewController: UIViewController {
     }
     
     @IBAction private func btnCard(_ sender: UIButton) {
-        if let cardNumber = btnCardOutletCollection.index(of: sender) {
+        if let cardNumber = visibleCardButtons.index(of: sender) {
             if !game.cards[cardNumber].isMatched {
                 flipCount += 1
             }
@@ -55,9 +71,9 @@ class ConcentrationViewController: UIViewController {
     }
     
     private func updateViewFromModel() {
-        if btnCardOutletCollection != nil {
-            for index in btnCardOutletCollection.indices {
-                let button = btnCardOutletCollection[index]
+        if visibleCardButtons != nil {
+            for index in visibleCardButtons.indices {
+                let button = visibleCardButtons[index]
                 let card = game.cards[index]
                 if card.isFaceUp {
                     button.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
